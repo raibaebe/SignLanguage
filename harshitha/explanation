@@ -1,0 +1,38 @@
+# Sign Language Recognition Project
+
+## Overview
+
+This project implements a Convolutional Neural Network (CNN) to recognize American Sign Language (ASL) signs using image data. The model is trained on a subset of the WLASL100 dataset, which contains images of different signs, to classify and predict sign labels accurately.
+
+## Project Workflow
+
+1. **Dataset Preparation**  
+   - Dataset used: WLASL100 (Word-Level American Sign Language)  
+   - Downloaded and extracted the dataset into the working directory.  
+   - Explored the folder structure to understand how images and labels are organized.  
+   - Loaded images and their corresponding labels for training and validation.
+
+2. **Data Preprocessing**  
+   - Applied image transformations including resizing, normalization, and tensor conversion.  
+   - Created PyTorch datasets and dataloaders for batching and shuffling data.
+
+3. **Model Architecture**  
+   - Designed a simple CNN (`SignLanguageCNN`) with the following layers:  
+     - Two convolutional layers + ReLU activations + max pooling  
+     - Dropout layer to reduce overfitting  
+     - Two fully connected layers leading to the number of output classes  
+   - The model takes 128x128 RGB images as input.
+
+4. **Training**  
+   - Set the device to GPU (if available) or CPU.  
+   - Trained the model for 5 epochs with a batch size of 16.  
+   - Monitored training loss at each epoch.  
+   - Achieved near-perfect accuracy on validation data.
+
+5. **Saving and Loading the Model**  
+   - Saved the trained model weights as `sign_language_cnn.pth`.  
+   - Demonstrated how to load the model later for inference.
+
+6. **Prediction and Visualization**  
+   - Ran predictions on single images and batches of images from the validation set.  
+   - Displayed predicted labels for given input images.
